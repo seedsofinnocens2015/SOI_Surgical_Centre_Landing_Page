@@ -1,0 +1,353 @@
+@import 'default/variable';
+@import 'default/typography';
+@import 'common/preloader';
+@import 'common/spacing';
+@import 'common/general';
+@import 'common/slider';
+@import 'common/video-modal';
+@import 'common/header';
+@import 'common/footer';
+@import 'common/sidebar';
+@import 'shortcode/hero';
+@import 'shortcode/banner';
+@import 'shortcode/iconbox';
+@import 'shortcode/post';
+@import 'shortcode/cta';
+@import 'shortcode/testimonial';
+@import 'shortcode/counter';
+@import 'shortcode/casestudie';
+@import 'shortcode/team';
+@import 'shortcode/imagebox';
+@import 'shortcode/pricing';
+@import 'shortcode/card';
+@import 'shortcode/tabs';
+@import 'shortcode/why_choose_us';
+@import 'shortcode/faq';
+@import 'shortcode/best_ivf_section';
+@import 'shortcode/best_ivf_v2_extra';
+@import 'common/slick-font-display';
+/*--------------------------------
+ Extra css
+ -------------------------------*/
+.cs_legal_content {
+  background: #ffffff;
+  border: 1px solid #edf0f5;
+  border-radius: 10px;
+  box-shadow: 0 10px 35px rgba(69, 83, 110, 0.08);
+  padding: 42px;
+}
+
+.cs_legal_updated {
+  display: inline-flex;
+  margin: 0 0 20px;
+  padding: 8px 14px;
+  border-radius: 30px;
+  background: rgba(76, 172, 174, 0.12);
+  color: #4cacae;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.cs_legal_intro,
+.cs_legal_text,
+.cs_legal_list,
+.cs_legal_raw {
+  color: #5c6675;
+  font-size: 16px;
+  line-height: 1.85;
+}
+
+.cs_legal_raw {
+  white-space: pre-wrap;
+}
+
+.cs_legal_raw_line {
+  white-space: pre-wrap;
+}
+
+.cs_legal_line_gap {
+  height: 14px;
+}
+
+.cs_legal_intro {
+  margin-bottom: 34px;
+}
+
+.cs_legal_section {
+  padding-top: 30px;
+  margin-top: 30px;
+  border-top: 1px solid #edf0f5;
+}
+
+.cs_legal_section:first-of-type {
+  padding-top: 0;
+  margin-top: 0;
+  border-top: 0;
+}
+
+.cs_legal_heading {
+  font-size: 24px;
+  margin-bottom: 14px;
+}
+
+.cs_legal_text {
+  margin-bottom: 12px;
+}
+
+.cs_legal_list {
+  margin: 0 0 12px;
+  padding-left: 20px;
+}
+
+.cs_legal_list li {
+  margin-bottom: 8px;
+}
+
+.cs_legal_sidebar {
+  position: sticky;
+  top: 110px;
+  background: #f8fafc;
+  border: 1px solid #edf0f5;
+  border-radius: 10px;
+  padding: 28px;
+}
+
+.cs_legal_sidebar h3,
+.cs_legal_help h4 {
+  color: #1f2b3a;
+  font-size: 22px;
+  margin-bottom: 18px;
+}
+
+.cs_legal_links {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.cs_legal_links a {
+  display: block;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #45536e;
+  font-weight: 600;
+  padding: 13px 16px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.cs_legal_links a:hover {
+  color: #df3655;
+  transform: translateX(4px);
+}
+
+.cs_legal_help {
+  border-top: 1px solid #e2e8f0;
+  padding-top: 24px;
+}
+
+.cs_legal_help p {
+  color: #5c6675;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.cs_legal_help a {
+  display: block;
+  color: #df3655;
+  font-weight: 700;
+  margin-top: 8px;
+  text-decoration: none;
+}
+
+@media (max-width: 991px) {
+  .cs_legal_sidebar {
+    position: static;
+  }
+}
+
+@media (max-width: 575px) {
+  .cs_legal_content,
+  .cs_legal_sidebar {
+    padding: 24px;
+  }
+
+  .cs_legal_heading {
+    font-size: 21px;
+  }
+}
+
+.cs_hero.cs_style_1 .cs_hero_text {
+  background-color: inherit;
+  padding: inherit;
+  border-radius: inherit;
+  position: inherit;
+}
+.cs_tab_links.cs_style_1 li a span {
+  font-size: 19px;
+}
+.cs_card.cs_style_2 .cs_card_text {
+  max-width: 530px;
+}
+.cs_card.cs_style_2 .cs_card_title {
+  font-size: 27px;
+}
+.home_form_area .cs_form_field {
+  background-color: #fff;
+}
+.about-page-area .about-team hr{
+  display: none;
+}
+.rr--group {
+  display: flex;
+  width: 100%;
+  position: relative;
+}
+.rr--box {
+  display: flex;
+  width: 100%;
+  flex-grow: 1;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.rr--has-stroke .rr--off .rr--svg {
+  stroke: var(--rr--stroke-off-color, currentColor);
+  width: 30px;
+  padding-left: 5px;
+}
+
+
+
+/* ========================================================
+   IVF DOCTORS IN INDIA - Custom Compact 2-per-row Card Grid
+   ======================================================== */
+.soi_doctor_mini_grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  width: 100%;
+  margin: 35px 0;
+}
+
+@media (max-width: 680px) {
+  .soi_doctor_mini_grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+.soi_doctor_mini_card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #ffffff;
+  border: 1px solid #edf0f5;
+  border-radius: 12px;
+  padding: 16px;
+  text-decoration: none !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.soi_doctor_mini_card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: #df3655;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.soi_doctor_mini_card:hover {
+  transform: translateY(-3px);
+  border-color: #df3655;
+  box-shadow: 0 8px 22px rgba(223, 54, 85, 0.12);
+}
+
+.soi_doctor_mini_card:hover::before {
+  opacity: 1;
+}
+
+.soi_doc_thumb {
+  width: 90px;
+  height: 90px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #f0f2f5;
+  background: #f8fafc;
+  transition: transform 0.3s ease;
+}
+
+.soi_doctor_mini_card:hover .soi_doc_thumb {
+  transform: scale(1.05);
+  border-color: #df3655;
+}
+
+.soi_doc_thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.soi_doc_details {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.soi_doc_name {
+  font-size: 17px !important;
+  font-weight: 700 !important;
+  color: #1a1a1a !important;
+  margin: 0 0 4px 0 !important;
+  line-height: 1.3 !important;
+  transition: color 0.2s ease;
+}
+
+.soi_doctor_mini_card:hover .soi_doc_name {
+  color: #df3655 !important;
+}
+
+.soi_doc_sub {
+  font-size: 13px !important;
+  color: #64748b !important;
+  margin: 0 0 6px 0 !important;
+  font-weight: 500;
+  line-height: 1.35 !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.soi_doc_meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 2px;
+}
+
+.soi_doc_meta_item {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px !important;
+  color: #475569 !important;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.soi_doc_meta_item svg {
+  color: #df3655;
+  font-size: 12px;
+  flex-shrink: 0;
+}

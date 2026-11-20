@@ -1,0 +1,257 @@
+/*--------------------------------------------------------------
+>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+1. Typography
+2. Preloader
+3. Spacing
+4. General
+5. Slider
+6. Video Modal
+7. Header
+8. Footer
+9. Sidebar
+10. Hero
+11. Banner
+12. Iconbox
+13. Posts
+14. CTA
+15. Testimonial
+16. Portfolio
+17. Counter
+18. Casestudie
+19. Team
+20. Imagebox
+21. Pricing
+22. Card
+--------------------------------------------------------------*/
+
+/* Next.js Inter font is loaded via `next/font` in layout.js. Avoid extra
+   render-blocking @import declarations here so Lighthouse does not flag
+   additional font downloads. */
+
+/* Lemon Milk USP font — self-hosted WOFF + font-display: swap.
+   Only ship weights used in UI (400/500/700 normal) to cut parallel requests. */
+@font-face {
+  font-family: 'LEMON MILK';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/lemon-milk/LemonMilkRegular.woff') format('woff');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'LEMON MILK';
+  font-style: normal;
+  font-weight: 500;
+  src: url('/fonts/lemon-milk/LemonMilkMedium.woff') format('woff');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'LEMON MILK';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/fonts/lemon-milk/LemonMilkBold.woff') format('woff');
+  font-display: swap;
+}
+
+/*--------------------------------------------------------------
+1. Typography
+----------------------------------------------------------------*/
+body,
+html {
+  color: var(--body-color);
+  font-family: var(--body-font);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  font-weight: 400;
+  overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  clear: both;
+  color: var(--heading-color);
+  padding: 0;
+  margin: 0 0 20px 0;
+  font-weight: 600;
+  line-height: var(--line-height-heading);
+  font-family: var(--heading-font);
+}
+
+.cs_primary_font {
+  font-family: var(--heading-font);
+}
+
+.cs_secondary_font {
+  font-family: var(--body-font);
+}
+
+/* Responsive type scale using clamp() for headings */
+h1 {
+  font-size: clamp(32px, 4vw, var(--font-size-h1));
+}
+
+h2 {
+  font-size: clamp(28px, 3.2vw, var(--font-size-h2));
+}
+
+h3 {
+  font-size: clamp(22px, 2.6vw, var(--font-size-h3));
+}
+
+h4 {
+  font-size: clamp(18px, 2.1vw, var(--font-size-h4));
+}
+
+h5 {
+  font-size: clamp(16px, 1.9vw, 18px);
+}
+
+h6 {
+  font-size: clamp(14px, 1.7vw, 16px);
+}
+
+/* Paragraphs & general copy */
+p {
+  margin-bottom: 24px;
+  font-size: clamp(15px, 1.05vw, var(--font-size-body));
+  line-height: var(--line-height-body);
+  font-weight: 400;
+  color: var(--body-color);
+  max-width: var(--max-text-width);
+}
+
+/* Constrain long-form text blocks for better readability */
+.cs_text_style_1,
+.cs_service_subtitle,
+.cs_blog_subtitle,
+.cs_faq_answer,
+.cs_page_heading_text,
+.cs_section_intro {
+  max-width: var(--max-text-width);
+  line-height: var(--line-height-body);
+}
+
+/* Utility for muted / secondary text */
+.cs_text_muted {
+  color: var(--text-secondary);
+}
+
+/* Common heading-style utility classes (many components use these on non-heading tags) */
+.cs_section_title,
+.cs_service_heading,
+.cs_blog_title,
+.cs_widget_title,
+.cs_footer_widget_title {
+  font-family: var(--heading-font);
+  font-weight: 600;
+  line-height: var(--line-height-heading);
+  color: var(--heading-color);
+}
+
+ul {
+  margin: 0 0 25px 0;
+  padding-left: 20px;
+  list-style: square outside none;
+}
+
+ol {
+  padding-left: 20px;
+  margin-bottom: 25px;
+}
+
+dfn,
+cite,
+em,
+i {
+  font-style: italic;
+}
+
+blockquote {
+  margin: 0 15px;
+  font-style: italic;
+  font-size: 20px;
+  line-height: 1.6em;
+  margin: 0;
+}
+
+address {
+  margin: 0 0 15px;
+}
+
+img {
+  border: 0;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+button {
+  color: inherit;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+a:hover {
+  text-decoration: none;
+  color: var(--accent-color);
+}
+
+table {
+  width: 100%;
+  margin-bottom: 25px;
+
+  th {
+    font-weight: 600;
+    color: var(--body-color);
+  }
+
+  td,
+  th {
+    border-top: 1px solid var(--border-color);
+    padding: 11px 10px;
+  }
+}
+
+dl {
+  margin-bottom: 25px;
+
+  dt {
+    font-weight: 600;
+  }
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+pre {
+  color: var(--body-color);
+  border: 1px solid var(--border-color);
+  font-size: 18px;
+  padding: 25px;
+  border-radius: 5px;
+}
+
+kbd {
+  font-size: 100%;
+  background-color: var(--body-color);
+  border-radius: 5px;
+}
+
+input,
+textarea {
+  color: var(--heading-color);
+  transition: all 0.4s ease;
+}

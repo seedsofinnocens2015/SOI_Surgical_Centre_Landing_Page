@@ -1,0 +1,562 @@
+/*--------------------------------------------------------------
+  14. CTA
+----------------------------------------------------------------*/
+.cs_cta.cs_style_1 {
+  padding: 60px 0 60px 0;
+  min-height: 520px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  margin-top: -200px;
+  z-index: 1;
+
+  // Smooth concave top curve under home banner
+  clip-path: polygon(0% 70px,
+      8% 82px,
+      16% 94px,
+      24% 104px,
+      32% 112px,
+      40% 118px,
+      50% 122px,
+      60% 118px,
+      68% 112px,
+      76% 104px,
+      84% 94px,
+      92% 82px,
+      100% 70px,
+      100% 100%,
+      0% 100%);
+
+
+
+
+
+
+  @media (max-width: 991px) {
+    min-height: auto;
+    padding: 50px 0 50px 0;
+    clip-path: polygon(0% 62px,
+        10% 72px,
+        20% 82px,
+        30% 90px,
+        40% 96px,
+        50% 100px,
+        60% 96px,
+        70% 90px,
+        80% 82px,
+        90% 72px,
+        100% 62px,
+        100% 100%,
+        0% 100%);
+  }
+
+  @media (max-width: 575px) {
+    padding: 45px 0 45px 0;
+    clip-path: polygon(0% 58px,
+        10% 68px,
+        20% 77px,
+        30% 84px,
+        40% 89px,
+        50% 92px,
+        60% 89px,
+        70% 84px,
+        80% 77px,
+        90% 68px,
+        100% 58px,
+        100% 100%,
+        0% 100%);
+
+  }
+
+
+  .cs_cta_in {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    min-height: 260px;
+
+
+    @media (max-width: 991px) {
+      flex-direction: column;
+      gap: 30px 0;
+      min-height: auto;
+      align-items: flex-start;
+    }
+
+    @media (max-width: 575px) {
+      gap: 25px 0;
+    }
+  }
+
+  .cs_cta_left {
+    flex: 1;
+    display: flex;
+    align-items: center;
+
+    @media (max-width: 991px) {
+      width: 100%;
+    }
+  }
+
+  .cs_cta_right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+
+    @media (max-width: 991px) {
+      width: 100%;
+      justify-content: flex-start;
+    }
+  }
+
+  .container {
+    position: relative;
+    z-index: 2;
+    margin-top: 160px;
+    padding-left: 100px;
+    padding-right: 100px;
+    max-width: 100%;
+
+    @media (max-width: 1400px) {
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+
+    @media (max-width: 1199px) {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    @media (max-width: 767px) {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+
+  .cs_cta_title {
+    font-size: clamp(22px, 3vw, 40px);
+    font-weight: 700;
+    line-height: 1.2;
+    text-transform: uppercase;
+    color: #000000;
+    margin: 0;
+    letter-spacing: 0.5px;
+    // text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.742);
+
+    @media (max-width: 991px) {
+      font-size: clamp(20px, 3.5vw, 32px);
+    }
+
+    @media (max-width: 575px) {
+      font-size: clamp(30px, 5vw, 32px);
+      
+      br {
+        display: none;
+      }
+    }
+  }
+
+  .cs_cta_cards {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+    justify-content: flex-start;
+
+    @media (max-width: 991px) {
+      flex-direction: row;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    @media (max-width: 767px) {
+      gap: 10px;
+    }
+  }
+
+  .cs_cta_card {
+    flex: none;
+    width: 246px;
+    height: 282px;
+    background-color: #FFFBF8;
+    border: 1px solid #FCE2D4;
+    border-radius: 30px;
+    padding: 25px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-sizing: border-box;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    @media (max-width: 991px) {
+      width: calc(50% - 6px);
+      height: auto;
+      min-height: 240px;
+      padding: 20px 15px;
+    }
+
+    @media (max-width: 575px) {
+      width: calc(50% - 5px);
+      min-height: 220px;
+      padding: 18px 12px;
+      border-radius: 25px;
+    }
+  }
+
+  .cs_cta_card_image {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    width: 100%;
+
+    .cs_cta_icon {
+      width: 100px;
+      height: 100px;
+      display: block;
+      background-color: var(--cta-icon-color, #df3655);
+      -webkit-mask-image: var(--cta-icon-url);
+      mask-image: var(--cta-icon-url);
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      -webkit-mask-position: center;
+      mask-position: center;
+      -webkit-mask-size: contain;
+      mask-size: contain;
+    }
+
+    @media (max-width: 991px) {
+      margin-bottom: 12px;
+      height: 80px;
+
+      .cs_cta_icon {
+        width: 80px;
+        height: 80px;
+      }
+    }
+
+    @media (max-width: 575px) {
+      margin-bottom: 10px;
+      height: 70px;
+
+      .cs_cta_icon {
+        width: 70px;
+        height: 70px;
+      }
+    }
+  }
+
+  .cs_cta_card_title {
+    font-size: 21px;
+    font-weight: 700;
+    color: #2c2c2c;
+    margin: 0 0 15px 0;
+    line-height: 1.3;
+    text-transform: capitalize;
+
+    @media (max-width: 991px) {
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
+
+    @media (max-width: 575px) {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+  }
+
+  .cs_cta_card_link {
+    font-size: 14px;
+    color: #888;
+    font-weight: 500;
+    margin-top: auto;
+    transition: color 0.3s ease;
+
+    @media (max-width: 991px) {
+      font-size: 13px;
+    }
+
+    @media (max-width: 575px) {
+      font-size: 12px;
+    }
+  }
+
+  .cs_cta_card:hover .cs_cta_card_link {
+    color: #de3554;
+  }
+
+  .cs_cta_shape {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    right: -140px;
+    bottom: -150px;
+
+    &::before,
+    &::after {
+      content: '';
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background-color: var(--accent-color);
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
+    &::before {
+      transform: scale(0);
+      z-index: 1;
+      animation: zoom-shape1 4s linear infinite;
+      animation-delay: 1s;
+    }
+
+    &::after {
+      transform: scale(0);
+      animation: zoom-shape2 4s linear infinite;
+      opacity: 0.71;
+    }
+  }
+
+  &.cs_type_1 {
+    padding: 40px 0;
+
+    @media (max-width: 991px) {
+      padding: 35px 0;
+    }
+
+    .cs_cta_in {
+      padding: 0;
+      position: relative;
+      z-index: 1;
+
+      @media (max-width: 991px) {
+        padding: 0;
+      }
+    }
+
+    .cs_cta_left {
+      gap: 30px 60px;
+    }
+
+    .cs_cta_thumb {
+      width: initial;
+      height: 125px;
+
+      &:before {
+        height: 60px;
+        width: 60px;
+        margin-top: -32px;
+        right: -12px;
+      }
+    }
+
+    .container {
+      position: relative;
+      z-index: 2;
+
+      &::before {
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 100vw;
+        left: -20px;
+        top: 0;
+        background-color: var(--blue-color);
+        border-radius: 100px 0 0 100px;
+
+        @media (max-width: 991px) {
+          left: 50%;
+          transform: translateX(-50%);
+          border-radius: 0;
+        }
+      }
+    }
+
+    .cs_cta_shape {
+      z-index: 3;
+    }
+  }
+}
+
+.cs_cta.cs_style_2 {
+  width: 100%;
+  height: 100%;
+  min-height: 600px;
+  position: relative;
+
+  @media (max-width: 500px) {
+    min-height: 640px;
+  }
+
+  @media (max-width: 380px) {
+    min-height: 680px;
+  }
+
+  .cs_cta_btn_wrapper {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+
+    @media (max-width: 991px) {
+      justify-content: flex-start;
+    }
+  }
+
+  .cs_player_btn {
+    width: 43px;
+    height: 43px;
+    color: var(--accent-color);
+
+    &:before,
+    &:after {
+      background-color: var(--white);
+    }
+  }
+
+  .cs_play_btn_text {
+    background-repeat: no-repeat;
+    background-image: -webkit-gradient(linear,
+        left top,
+        right top,
+        color-stop(0, currentColor),
+        to(currentColor));
+    background-image: linear-gradient(90deg, currentColor 0, currentColor 100%);
+    transition: background-size 0.42s cubic-bezier(0.49, 0.49, 0.08, 1),
+      color 0.27s ease-out;
+    background-position: 100% calc(100% - 0px);
+    background-size: 0 1px;
+
+    &:hover {
+      background-size: 100% 1px;
+      background-position: 0 calc(100% - 0px);
+    }
+  }
+
+  .cs_video_open {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: var(--white);
+    font-size: 17px;
+    font-weight: 500;
+
+    &:hover {
+      .cs_play_btn_text {
+        background-size: 100% 1px;
+        background-position: 0 calc(100% - 0px);
+      }
+    }
+  }
+
+  .cs_cta_text {
+    max-width: 540px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .cs_section_title {
+    margin-bottom: 12px;
+  }
+
+  .cs_cta_subtitle {
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 44px;
+  }
+
+  .cs_btn.cs_style_1 {
+    margin-top: 1px;
+  }
+
+  .cs_cta_shape {
+    right: 3%;
+    bottom: 8%;
+
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+}
+
+.cs_cta.cs_style_3 {
+  padding: 60px 0 65px;
+
+  @media (max-width: 767px) {
+    padding: 40px 0;
+  }
+
+  .cs_cta_in {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    @media (max-width: 767px) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 24px;
+    }
+  }
+
+  .cs_cta_info {
+    padding-left: 20px;
+    position: relative;
+
+    &::after,
+    &::before {
+      content: '';
+      width: 3px;
+      height: 100%;
+      border-radius: 2px;
+      position: absolute;
+      left: 0;
+    }
+
+    &::before {
+      background-color: var(--white);
+      top: 0;
+    }
+
+    &::after {
+      height: 50%;
+      background-color: var(--blue-color);
+      bottom: 0;
+    }
+  }
+
+  .cs_cta_title {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .cs_color_3:hover {
+    background-color: var(--blue-color);
+  }
+}
+
+@keyframes zoom-shape1 {
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes zoom-shape2 {
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
