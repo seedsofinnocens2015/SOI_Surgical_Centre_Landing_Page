@@ -19,108 +19,187 @@
       "Specialized Surgical Procedures With a Patient-Centred Approach"
     ]
   },
-  "introduction": {
-    "heading": "Expert Surgical Procedures For Every Woman's Life Stage",
-    "paragraph": "Each woman requires a special approach to treatment, and we take into account all the nuances of her individual health issues at Seeds of Innocence Surgical Centre. Our experienced laparoscopy surgeons make an exact assessment of your condition and recommend the best treatment procedure suitable for your diagnosis and reproductive needs. In cases such as endometriosis, fibroids, ovarian cysts, blocked fallopian tubes or unexplained infertility, our goal is to offer safe, effective, and fertility-preserving surgical treatment. Our laparoscopic surgery procedures have small incisions, decreased pain, minimal blood loss, and a quick recovery period.",
-    "image": "/assets/img/surgical.png",
-    "imageAlt": "Expert surgical procedures for every woman's life stage"
+  "about": {
+    "heading": "About Seeds of Innocens Surgical Centre",
+    "subheading": "Advanced Surgical Care, With Women’s Health at the Centre",
+    "paragraphs": [
+      "At Seeds of Innocens Surgical Centre, we believe that gynaecological surgery should go beyond treating a condition; it should protect a woman’s health, well-being, and fertility. Our centre brings together advanced minimally invasive gynaecological surgery, experienced surgical expertise, and patient-centred care to diagnose and treat a wide range of conditions affecting the uterus, ovaries, and reproductive health.",
+      "From laparoscopic surgery to hysteroscopy, and fertility-sparing surgery for various conditions including fibroids, endometriosis, ovarian cysts, adenomyosis, uterine abnormalities, and polyps, our approach revolves around picking the right type of procedure for each case.",
+      "The care of the patients may include consultations from gynaecologists, fertility experts, embryologists, and other reproductive health specialists where needed. What we aim to provide is accurate surgical treatment while paying attention to the recovery process, reproductive health, and the overall well-being of the patient."
+    ],
+    "vision": {
+      "title": "Our Vision: Precision & Compassion in Women’s Surgical Healthcare",
+      "description": "To ensure a future where women get advanced, minimally invasive and fertility-friendly surgical gynaecology care along with clinical proficiency, state-of-the-art technology and compassionate care.\n\nOur vision is to provide a healthcare setting where women make informed choices and get treatments according to their needs."
+    },
+    "mission": {
+      "title": "Our Mission: Better Surgical Results, Better Patient Experience",
+      "description": "It is our mission to deliver safe and evidence-based personalized gynecologic surgery services while continually improving our clinical skills and technology.",
+      "points": [
+        "Offer minimally invasive surgery solutions when applicable.",
+        "Patient safety and informed decision making come first.",
+        "Preservation of fertility if possible.",
+        "Personalized approach to patient’s needs.",
+        "Integration of surgical skills with multidisciplinary fertility care.",
+        "Transparency during diagnostics, treatment, and post-treatment period."
+      ]
+    }
   },
-  "additionalContent": [
-    {
-      "tag": "h2",
-      "heading": "Hysteroscopy for Fibroids, Polyps & Infertility | Specialist in Delhi NCR",
-      "paragraphs": [
-        "Depending on the specific case, hysteroscopy can be helpful to diagnose or treat some diseases such as endometrial polyps, submucous fibroids, uterine adhesions and others. Hysteroscopy can also be conducted during the evaluation of infertility and it needs an internal examination of the uterus.",
-        "In Delhi, the cost of hysteroscopy can differ from one to another according to the kind of hysteroscopy procedure, its diagnostics or operation, investigation, anaesthesia, and others. During the consultation, the staff will explain to you the process of the procedure, your expected recovery, and costs.",
-        "If you are looking for a hysteroscopy doctor in Delhi, or trying to find out about hysteroscopy cost or test cost in Delhi, contact us."
-      ]
-    },
-    {
-      "tag": "h3",
-      "heading": "Laparoscopy for Endometriosis, Fibroids & Ovarian Cysts | Specialist in Delhi NCR",
-      "paragraphs": [
-        "Laparoscopy is a minimally invasive procedure performed by a gynaecologist using a specially designed camera known as a laparoscope which enables diagnosis and treatment of some medical issues via minimal incisions. In Seeds of Innocens Surgical Centre (SOI Surgical Centre), laparoscopy may be indicated in the assessment and treatment of gynaecological conditions affecting your reproductive health, fertility or overall well-being.",
-        "Depending on your condition, laparoscopy may assist in diagnosing or treating problems like endometriosis, ovarian cysts, uterine fibroids, pelvic adhesions or some of the reasons behind infertility. Laparoscopy may also be suggested in cases where there is need for a thorough examination of pelvic organs or if conventional surgery may not be required at all.",
-        "Laparoscopy costs in Delhi NCR depend on the procedure involved, the level of its complexity, investigations performed, anaesthesia, hospital stay and other aspects. The procedure, the recovery process and relevant costs will be discussed with you at the time of consultation.",
-        "If you are looking for a good laparoscopy doctor in Delhi NCR or have some questions about the laparoscopy cost in Delhi NCR, Lucknow, Kolkata please visit us."
-      ]
-    },
-    {
-      "tag": "h3",
-      "heading": "Minimally Invasive Gynecology Surgery in Delhi NCR | Precision Meets Compassion",
-      "paragraphs": [
-        "Seeds of Innocens Surgical Centre (SOI Surgical Centre) offers modern laparoscopic surgery for gynecological ailments in Delhi NCR, using minimally invasive techniques to ensure effective treatment with smaller incisions and less pain. Our expert team of surgeons and laparoscopic gynecologists will conduct a comprehensive examination and suggest the type of surgery to undertake.",
-        "Conditions that may require a laparoscopic procedure include fibroids, endometriosis, ovarian cysts, ectopic pregnancies, pelvic adhesions, and certain uterine conditions. There may be many advantages in minimally invasive laparoscopic surgery when compared to open surgical techniques, such as shorter hospital stays and quicker recovery in some patients.",
-        "At the Seeds of Innocens Surgical Center (SOI Surgical Centre), patients will receive personalized evaluation, surgical planning, and post-surgical care under one roof. Are you searching for a leading laparoscopic surgeon in Delhi NCR?"
-      ]
-    }
-  ],
-  "procedures": [
-    {
-      "title": "POLYP SURGERY",
-      "description": "Endometrial and cervical polyps can cause abnormal uterine bleeding, infertility, or recurrent pregnancy loss. Our minimally invasive hysteroscopic procedures ensure precise removal while preserving the uterus's health and improving reproductive outcomes."
-    },
-    {
-      "title": "UTERINE MALFORMATION SURGERY",
-      "description": "Congenital uterine anomalies like a septate uterus might affect pregnancy and fertility outcomes. We also offer advanced hysteroscopic and laparoscopic corrective surgeries that are well designed to restore normal uterine anatomy and support successful conception."
-    },
-    {
-      "title": "FIBROID SURGERY",
-      "description": "Uterine fibroids can lead to heavy menstrual bleeding, pelvic pain, and recurrent miscarriages. Our hysteroscopic and laparoscopic techniques remove fibroids while preserving the uterus whenever medically appropriate."
-    },
-    {
-      "title": "ENDOMETRIOSIS SURGERY",
-      "description": "Endometriosis is associated with pelvic pain, painful periods, and problems with fertility. The procedures that we use to treat this condition via laparoscopy will not only help to eliminate the tissue but also will assist in improving reproductive functions and maintaining fertility."
-    },
-    {
-      "title": "RECURRENT OVARIAN CYSTS SURGERY",
-      "description": "If you suffer from recurring ovarian cysts, the laparoscopic surgery performed by our specialists will be aimed at their elimination while preserving the healthy ovarian tissue."
-    },
-    {
-      "title": "ADENOMYOSIS SURGERY",
-      "description": "The symptoms of adenomyosis include heavy periods, painful cramps, and pelvic pain. The specialists of our clinic offer you an individually designed laparoscopy procedure that will preserve your fertility to the greatest extent possible."
-    }
-  ],
   "whyChoose": {
-    "heading": "Why Our Patients Choose Us ?",
-    "subheading": "Expertise That Puts Women's Health First",
+    "heading": "Why Choose Seeds of Innocens Surgical Centre?",
+    "description": "Choosing the right surgical centre is a crucial step. When it comes to our Seeds of Innocens Surgical Centre, all treatment plans are tailored according to the patient's condition, past medical history, and reproductive goals.",
+    "subheading": "What makes us unique:",
     "items": [
       {
-        "title": "Experienced Women's Health Specialists",
-        "description": "Our multidisciplinary team includes experienced laparoscopic surgeons, fertility experts, embryologists, and gynecologists committed to delivering evidence-based surgical care."
+        "title": "Professional Gynaecological Surgical Team",
+        "description": "Professionals in minimally invasive gynaecological surgery."
       },
       {
-        "title": "Advanced Minimally Invasive Surgical Techniques",
-        "description": "Our specialists perform the latest surgical techniques, including:",
-        "points": [
-          "Small cuts",
-          "Less postoperative pain",
-          "Quicker recovery",
-          "Reduced duration of hospital stay",
-          "Minimized scarring"
-        ]
+        "title": "Modern Laparoscopic & Hysteroscopic Surgery",
+        "description": "Advanced techniques that ensure minimum trauma from surgery where feasible."
       },
       {
-        "title": "Patient-Centred Approach in Surgery",
-        "description": "All surgical decisions are made with due consideration of patients' future plans concerning their fertility. We always try to suggest those surgical interventions that will protect patients' reproductive health while curing the disease."
+        "title": "Pro-fertility Surgical Approach",
+        "description": "All surgery considerations are taken from the perspective of a woman's present condition and future reproductive goals."
       },
       {
-        "title": "Personalized Treatment of Our Patients",
-        "description": "During consultations and throughout the entire treatment process, patients receive individual attention, compassionate care, and transparent communication."
+        "title": "Custom Treatment Approaches",
+        "description": "Every person seeking healthcare is unique; our approach to treatments reflects it."
+      },
+      {
+        "title": "Multidisciplinary Infertility Services",
+        "description": "There is a multidisciplinary approach to help patients with their infertility issues."
+      },
+      {
+        "title": "Patient Care Centered On Patients’ Comfort",
+        "description": "Through every stage, from diagnosis to recovery, there is always a focus on communication, comfort, and decision making."
+      }
+    ]
+  },
+  "treatments": {
+    "heading": "Our Surgical Treatments",
+    "subheading": "Advanced Gynecological Surgeries for Different Issues in Women’s Health and Reproductive Well-being",
+    "description": "Our surgical treatment services are aimed at treating various gynecologic conditions that may affect patient’s health, well-being and fertility.",
+    "procedures": [
+      {
+        "title": "Laparoscopy",
+        "description": "Minimally invasive surgical procedures used for treatment of proper gynecological conditions."
+      },
+      {
+        "title": "Hysteroscopy",
+        "description": "The minimally invasive technique allowing specialists to diagnose and treat certain gynecological conditions in the woman’s body."
+      },
+      {
+        "title": "Fibroid Surgery",
+        "description": "Surgery of the uterine fibroids in which type of surgery is determined according to specific patient’s requirements."
+      },
+      {
+        "title": "Endometriosis Surgery",
+        "description": "Advanced laparoscopic treatment procedure for endometriosis treatment."
+      },
+      {
+        "title": "Ovarian Cyst Surgery",
+        "description": "Surgery of the ovarian cysts aiming at preserving ovaries if it is clinically indicated."
+      },
+      {
+        "title": "Adenomyosis Surgery",
+        "description": "Tailored surgical care for patients suffering from symptoms caused by adenomyosis disease."
+      },
+      {
+        "title": "Polyp Removal",
+        "description": "A hysteroscopy procedure is done to remove specific endometrial or cervical polyps that cause irregular bleeding, infertility or pregnancy loss."
+      },
+      {
+        "title": "Malformation Correction Surgery",
+        "description": "A surgical procedure to correct specific uterine malformations and maintain uterine integrity and health."
+      }
+    ]
+  },
+  "procedures": [
+    {
+      "title": "Laparoscopy",
+      "description": "Minimally invasive surgical procedures used for treatment of proper gynecological conditions."
+    },
+    {
+      "title": "Hysteroscopy",
+      "description": "The minimally invasive technique allowing specialists to diagnose and treat certain gynecological conditions in the woman’s body."
+    },
+    {
+      "title": "Fibroid Surgery",
+      "description": "Surgery of the uterine fibroids in which type of surgery is determined according to specific patient’s requirements."
+    },
+    {
+      "title": "Endometriosis Surgery",
+      "description": "Advanced laparoscopic treatment procedure for endometriosis treatment."
+    },
+    {
+      "title": "Ovarian Cyst Surgery",
+      "description": "Surgery of the ovarian cysts aiming at preserving ovaries if it is clinically indicated."
+    },
+    {
+      "title": "Adenomyosis Surgery",
+      "description": "Tailored surgical care for patients suffering from symptoms caused by adenomyosis disease."
+    },
+    {
+      "title": "Polyp Removal",
+      "description": "A hysteroscopy procedure is done to remove specific endometrial or cervical polyps that cause irregular bleeding, infertility or pregnancy loss."
+    },
+    {
+      "title": "Malformation Correction Surgery",
+      "description": "A surgical procedure to correct specific uterine malformations and maintain uterine integrity and health."
+    }
+  ],
+  "leadershipTeam": {
+    "heading": "Leadership Team",
+    "subheading": "Meet Our Expert Leaders in Women’s Surgery",
+    "description": "At Seeds of Innocens Surgical Centre, our medical professionals are complemented by an even greater dream – making leading women’s healthcare more precise, more accessible and more patient-focused. Our leaders bring to the table a combination of medical and non-medical experience in areas including infertility treatment and reproduction medicine.",
+    "leaders": [
+      {
+        "name": "Dr. Gauri Agarwal",
+        "role": "Founder & Director, Seeds of Innocens IVF & Genestring Labs",
+        "experience": "15+ Years of Experience",
+        "location": "Delhi/NCR",
+        "image": "/assets/img/Doctors/gauri agarwal.jpg",
+        "imageAlt": "Dr. Gauri Agarwal",
+        "profileUrl": "https://www.seedsofinnocens.com/ivf-doctor/dr-gauri-agarwal-ivf-specialist/",
+        "bio": "Dr. Gauri Agarwal is the founder of Seeds of Innocens IVF & Genestring Labs, having gained 15 years of experience in the field of fertility medicine. Under her guidance, Seeds of Innocens has evolved into a multi-centred network for fertility treatment while still maintaining its focus on personalized reproductive medicine and scientific innovation."
+      },
+      {
+        "name": "Dr. Pratik Kakani",
+        "role": "Gynecological Endoscopy Surgeon",
+        "degrees": "MBBS, MS (Obstetrics & Gynecology), FMAS",
+        "experience": "Over 10 years of Experience",
+        "location": "Ghaziabad, Uttar Pradesh",
+        "image": "/assets/img/Doctors/pratik.jpg",
+        "imageAlt": "Dr. Pratik Kakani",
+        "profileUrl": "https://www.seedsofinnocens.com/ivf-doctor/dr-pratik-kakani-gynae-endoscopy/",
+        "bio": "Dr. Pratik Kakani is a Gynecological Endoscopy Surgeon with over 10 years of experience and specialization in minimally invasive gynaecological surgeries. Dr. Pratik’s surgical specializations include laparoscopic, hysteroscopic, endometriosis, fibroid surgery, ovarian cyst and fertility surgery.\nHis surgical philosophy is based on precise diagnosis, minimally invasive surgeries and surgical planning taking into account reproductive goals of the patient."
       }
     ]
   },
   "expertTeam": {
-    "heading": "Our Expert <span>Team of Doctors</span>",
+    "heading": "Leadership Team",
+    "subheading": "Meet Our Expert Leaders in Women’s Surgery",
+    "description": "At Seeds of Innocens Surgical Centre, our medical professionals are complemented by an even greater dream – making leading women’s healthcare more precise, more accessible and more patient-focused. Our leaders bring to the table a combination of medical and non-medical experience in areas including infertility treatment and reproduction medicine.",
     "doctors": [
       {
+        "name": "Dr. Gauri Agarwal",
+        "subtitle": "Founder & Director, Seeds of Innocens IVF & Genestring Labs",
+        "experience": "15+ Years of Experience",
+        "location": "Delhi/NCR",
+        "image": "/assets/img/Doctors/gauri agarwal.jpg",
+        "imageAlt": "Dr. Gauri Agarwal",
+        "profileUrl": "https://www.seedsofinnocens.com/ivf-doctor/dr-gauri-agarwal-ivf-specialist/",
+        "bio": "Dr. Gauri Agarwal is the founder of Seeds of Innocens IVF & Genestring Labs, having gained 15 years of experience in the field of fertility medicine. Under her guidance, Seeds of Innocens has evolved into a multi-centred network for fertility treatment while still maintaining its focus on personalized reproductive medicine and scientific innovation."
+      },
+      {
         "name": "Dr. Pratik Kakani",
-        "subtitle": "Gynecological Endoscopy Surgeon",
+        "subtitle": "Gynecological Endoscopy Surgeon (MBBS, MS, FMAS)",
+        "experience": "Over 10 years of Experience",
+        "location": "Ghaziabad, Uttar Pradesh",
         "image": "/assets/img/Doctors/pratik.jpg",
         "imageAlt": "Dr. Pratik Kakani",
-        "experience": "10+ Years",
-        "location": "Ghaziabad - Uttar Pradesh",
-        "profileUrl": "https://www.seedsofinnocens.com/ivf-doctor/dr-pratik-kakani-gynae-endoscopy/"
+        "profileUrl": "https://www.seedsofinnocens.com/ivf-doctor/dr-pratik-kakani-gynae-endoscopy/",
+        "bio": "Dr. Pratik Kakani is a Gynecological Endoscopy Surgeon with over 10 years of experience and specialization in minimally invasive gynaecological surgeries. Dr. Pratik’s surgical specializations include laparoscopic, hysteroscopic, endometriosis, fibroid surgery, ovarian cyst and fertility surgery.\nHis surgical philosophy is based on precise diagnosis, minimally invasive surgeries and surgical planning taking into account reproductive goals of the patient."
       }
     ]
   },

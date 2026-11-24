@@ -74,27 +74,6 @@ export async function generateMetadata() {
   };
 }
 
-const ABOUT_PILLARS = [
-  {
-    number: '01',
-    title: 'NABH & Modular OT Infrastructure',
-    description:
-      'Ultra-clean laminar airflow operation theatres equipped with German Karl Storz 4K/3D visualization towers for extreme surgical precision and near-zero infection risk.',
-  },
-  {
-    number: '02',
-    title: 'Fertility Preservation First',
-    description:
-      'Every surgical technique—from fibroid myomectomy to endometriosis excision—is executed with micro-instruments to preserve natural ovarian reserve and uterine integrity for future conception.',
-  },
-  {
-    number: '03',
-    title: 'Daycare & Fast Recovery Protocols',
-    description:
-      'Minimally invasive keyhole approaches allow same-day or 24-hour discharge, minimal post-operative pain, and rapid resumption of regular daily activities within days.',
-  },
-];
-
 const SPECIALIZED_CONDITIONS = [
   {
     icon: '🌸',
@@ -140,13 +119,6 @@ const DAYCARE_BENEFITS = [
   'Minimal Blood Loss & Gentle Recovery',
   'Return to Work in 3–5 Days',
   '100% Cashless Insurance / TPA Support',
-];
-
-const TESTIMONIAL_METRICS = [
-  { value: '10,000+', label: 'Minimally Invasive Surgeries' },
-  { value: '99.2%', label: 'Clinical Procedure Success' },
-  { value: '24 Hours', label: 'Average Daycare Stay' },
-  { value: '4.9 / 5', label: 'Patient Satisfaction Rating' },
 ];
 
 const surgicalTestimonialsData = {
@@ -213,7 +185,24 @@ const surgicalTestimonialsData = {
 };
 
 export default function SurgicalCenterSubdomainPage() {
-  const { hero, patientChoice, introduction, additionalContent, procedures, whyChoose, expertTeam, journey, cta, faqs } = surgicalCenterData;
+  const {
+    hero,
+    patientChoice,
+    introduction,
+    additionalContent,
+    treatments,
+    procedures,
+    whyChoose,
+    leadershipTeam,
+    expertTeam,
+    about,
+    journey,
+    cta,
+    faqs,
+  } = surgicalCenterData;
+
+  const surgicalProcedures = treatments?.procedures || procedures || [];
+  const leadersList = leadershipTeam?.leaders || expertTeam?.doctors || [];
 
   return (
     <main className={styles.page} id="home">
@@ -243,9 +232,9 @@ export default function SurgicalCenterSubdomainPage() {
         </div>
       </Section>
 
-      <Section topSpaceLg="70" topSpaceMd="90" bottomSpaceLg="70" bottomSpaceMd="90">
-        <div className="container">
-          {additionalContent?.length > 0 && (
+      {additionalContent?.length > 0 && (
+        <Section topSpaceLg="70" topSpaceMd="90" bottomSpaceLg="70" bottomSpaceMd="90">
+          <div className="container">
             <div className={styles.introAdditionalContent}>
               {additionalContent.map((block, idx) => (
                 <div key={idx} className={styles.introContentBlock}>
@@ -277,38 +266,44 @@ export default function SurgicalCenterSubdomainPage() {
                 </div>
               ))}
             </div>
-          )}
-        </div>
-      </Section>
+          </div>
+        </Section>
+      )}
 
       {/* 3. Treatments & Procedures Section (#treatments) */}
       <section id="treatments" style={{ scrollMarginTop: '85px' }}>
         <Section className={styles.softSection} topSpaceLg="70" topSpaceMd="90" bottomSpaceLg="70" bottomSpaceMd="90">
           <div className="container">
             <div className={styles.sectionBadgeWrapper}>
-              <span className={styles.sectionBadge}>Treatments & Procedures</span>
+              <span className={styles.sectionBadge}>
+                {treatments?.heading || 'Our Surgical Treatments'}
+              </span>
               <h2 className={styles.aboutMainTitle}>
-                Advanced Daycare <span className="cs_accent_color">Minimally Invasive Surgeries</span>
+                {treatments?.subheading ? (
+                  <span>
+                    Advanced Gynecological Surgeries for{' '}
+                    <span className="cs_accent_color">Women’s Health & Reproductive Well-being</span>
+                  </span>
+                ) : (
+                  <span>
+                    Our <span className="cs_accent_color">Surgical Treatments</span>
+                  </span>
+                )}
               </h2>
               <p className={styles.aboutMainSubtitle}>
-                We offer modern laparoscopic and hysteroscopic procedures aimed at resolving complex gynecological conditions with minimal discomfort, negligible blood loss, and zero impact on future conception.
+                {treatments?.description ||
+                  'Our surgical treatment services are aimed at treating various gynecologic conditions that may affect patient’s health, well-being and fertility.'}
               </p>
             </div>
 
-            {/* Existing Procedures Cards */}
+            {/* 8 Surgical Treatments Procedures Cards */}
             <div className="row cs_gap_y_30">
-              {procedures.map((procedure, index) => (
-                <div className="col-lg-4 col-md-6" key={procedure.title}>
+              {surgicalProcedures.map((procedure, index) => (
+                <div className="col-lg-3 col-md-6" key={procedure.title}>
                   <article className={styles.serviceCard}>
                     <span className={styles.cardNumber}>{String(index + 1).padStart(2, '0')}</span>
                     <h3>{procedure.title}</h3>
                     <p>{procedure.description}</p>
-                    {procedure.listHeading && <strong>{procedure.listHeading}</strong>}
-                    {procedure.items && (
-                      <ul>
-                        {procedure.items.map((item) => <li key={item}>{item}</li>)}
-                      </ul>
-                    )}
                   </article>
                 </div>
               ))}
@@ -361,23 +356,25 @@ export default function SurgicalCenterSubdomainPage() {
       {/* 4. Why Choose Us Section */}
       <Section topSpaceLg="70" topSpaceMd="90" bottomSpaceLg="70" bottomSpaceMd="90">
         <div className="container">
-          <AccentHeading className={styles.centerHeading}>
-            {whyChoose.heading}
-          </AccentHeading>
-          <h3 className={styles.subheading}>{whyChoose.subheading}</h3>
+          <div className="text-center mb-4">
+            <AccentHeading className={styles.centerHeading}>
+              {whyChoose.heading}
+            </AccentHeading>
+            {whyChoose.description && (
+              <p className={styles.whyChooseIntro}>
+                {whyChoose.description}
+              </p>
+            )}
+            <h3 className={styles.subheading}>{whyChoose.subheading}</h3>
+          </div>
           <div className="row cs_gap_y_30">
             {whyChoose.items.map((item) => (
-              <div className="col-lg-6" key={item.title}>
+              <div className="col-lg-4 col-md-6" key={item.title}>
                 <article className={styles.featureCard}>
                   <span className={styles.featureIcon} aria-hidden="true">✓</span>
                   <div>
                     <h3>{item.title}</h3>
                     <p>{item.description}</p>
-                    {item.points && (
-                      <ul>
-                        {item.points.map((point) => <li key={point}>{point}</li>)}
-                      </ul>
-                    )}
                   </div>
                 </article>
               </div>
@@ -386,57 +383,67 @@ export default function SurgicalCenterSubdomainPage() {
         </div>
       </Section>
 
-      {/* 5. Our Expert Team of Doctors */}
-      {expertTeam?.doctors?.length > 0 && (
-        <Section topSpaceLg="50" topSpaceMd="40" bottomSpaceLg="50" bottomSpaceMd="60">
+      {/* 5. Leadership Team Section */}
+      {leadersList?.length > 0 && (
+        <Section topSpaceLg="50" topSpaceMd="40" bottomSpaceLg="60" bottomSpaceMd="60">
           <div className="container">
-            <div className="cs_section_heading cs_style_1 text-center mb-5">
-              <h2 className="cs_section_title">
-                Our Expert <span style={{ color: '#000000' }}>Team of Doctors</span>
+            <div className={styles.sectionBadgeWrapper}>
+              <span className={styles.sectionBadge}>
+                {leadershipTeam?.heading || 'Leadership Team'}
+              </span>
+              <h2 className={styles.aboutMainTitle}>
+                Meet Our Expert <span className="cs_accent_color">Leaders in Women’s Surgery</span>
               </h2>
+              {leadershipTeam?.description && (
+                <p className={styles.aboutMainSubtitle}>
+                  {leadershipTeam.description}
+                </p>
+              )}
             </div>
-            <div className="cs_doctors_grid cs_style_1">
-              {expertTeam.doctors.map((doctor) => (
-                <div className="cs_team cs_style_1 cs_blue_bg" key={doctor.name}>
-                  <div className="cs_team_shape cs_accent_bg" />
-                  {doctor.profileUrl ? (
-                    <Link href={doctor.profileUrl} className="cs_team_thumbnail">
-                      <Image
-                        src={getAssetPath(doctor.image)}
-                        alt={doctor.imageAlt || doctor.name}
-                        width={302}
-                        height={423}
-                        loading="lazy"
-                      />
-                    </Link>
-                  ) : (
-                    <div className="cs_team_thumbnail">
-                      <Image
-                        src={getAssetPath(doctor.image)}
-                        alt={doctor.imageAlt || doctor.name}
-                        width={302}
-                        height={423}
-                        loading="lazy"
-                      />
+
+            <div className={`row cs_gap_y_30 ${styles.leadershipGrid}`}>
+              {leadersList.map((leader) => (
+                <div className="col-lg-6" key={leader.name}>
+                  <div className={styles.leaderCard}>
+                    <div className={styles.leaderTop}>
+                      <div className={styles.leaderThumbnail}>
+                        <Image
+                          src={getAssetPath(leader.image)}
+                          alt={leader.imageAlt || leader.name}
+                          width={140}
+                          height={140}
+                          loading="lazy"
+                        />
+                      </div>
+                      <div className={styles.leaderInfo}>
+                        <h3>
+                          {leader.profileUrl ? (
+                            <Link href={leader.profileUrl} target="_blank" rel="noopener noreferrer">
+                              {leader.name}
+                            </Link>
+                          ) : (
+                            leader.name
+                          )}
+                        </h3>
+                        <div className={styles.leaderRole}>{leader.role || leader.subtitle}</div>
+                        {leader.degrees && <div className={styles.leaderDegrees}>{leader.degrees}</div>}
+                        <div className={styles.leaderMeta}>
+                          {leader.experience && (
+                            <span>
+                              <FaSuitcase aria-hidden="true" />
+                              {leader.experience}
+                            </span>
+                          )}
+                          {leader.location && (
+                            <span>
+                              <FaLocationDot aria-hidden="true" />
+                              {leader.location}
+                            </span>
+                          )}
+                        </div>
+                      </div>
                     </div>
-                  )}
-                  <div className="cs_team_bio">
-                    <h3 className="cs_team_title cs_extra_bold mb-0">
-                      {doctor.profileUrl ? <Link href={doctor.profileUrl}>{doctor.name}</Link> : doctor.name}
-                    </h3>
-                    {doctor.subtitle && <p className="cs_team_subtitle">{doctor.subtitle}</p>}
-                    {doctor.experience && (
-                      <p className="cs_team_experience">
-                        <FaSuitcase aria-hidden="true" />
-                        <span>{doctor.experience} Experience</span>
-                      </p>
-                    )}
-                    {doctor.location && (
-                      <p className="cs_team_location">
-                        <FaLocationDot aria-hidden="true" />
-                        <span>{doctor.location}</span>
-                      </p>
-                    )}
+                    {leader.bio && <p className={styles.leaderBio}>{leader.bio}</p>}
                   </div>
                 </div>
               ))}
@@ -468,13 +475,13 @@ export default function SurgicalCenterSubdomainPage() {
       {/* 7. Testimonials Section (#testimonials) */}
       <section id="testimonials" className={styles.testimonialsSection}>
         <div className="container text-center">
-            <span className={styles.sectionBadge}>Testimonials</span>           
+          <span className={styles.sectionBadge}>Testimonials</span>
           <TestimonialSection data={surgicalTestimonialsData} />
         </div>
       </section>
 
       {/* 8. Call to Action Banner */}
-      <Section topSpaceLg="60" topSpaceMd="75" bottomSpaceLg="50" bottomSpaceMd="70">
+      {/* <Section topSpaceLg="60" topSpaceMd="75" bottomSpaceLg="50" bottomSpaceMd="70">
         <div className="container">
           <div className={styles.cta}>
             <div>
@@ -485,7 +492,7 @@ export default function SurgicalCenterSubdomainPage() {
             <SurgicalConsultationModal buttonText={cta.buttonText} />
           </div>
         </div>
-      </Section>
+      </Section> */}
 
       {/* 9. About Us Section (#about-us) - Placed directly above Contact Us */}
       <section id="about-us" className={styles.dedicatedAboutSection} style={{ scrollMarginTop: '85px' }}>
@@ -494,26 +501,61 @@ export default function SurgicalCenterSubdomainPage() {
             <div className={styles.sectionBadgeWrapper}>
               <span className={styles.sectionBadge}>About Us</span>
               <h2 className={styles.aboutMainTitle}>
-                About Seeds of Innocence <span className="cs_accent_color">Surgical Centre</span>
+                About Seeds of Innocens <span className="cs_accent_color">Surgical Centre</span>
               </h2>
               <p className={styles.aboutMainSubtitle}>
-                Seeds of Innocence Surgical Centre is a dedicated unit of clinical excellence specializing in advanced minimally invasive gynecological surgeries. Led by expert laparoscopic and hysteroscopic surgeons, our mission is to deliver painless, scarless treatments while safeguarding every woman’s reproductive health and future fertility.
+                {about?.subheading || 'Advanced Surgical Care, With Women’s Health at the Centre'}
               </p>
             </div>
 
-            {/* Strategic Pillars of Care */}
-            <div className={styles.aboutPillarsGrid}>
-              <div className="row cs_gap_y_24">
-                {ABOUT_PILLARS.map((pillar) => (
-                  <div className="col-lg-4 col-md-6" key={pillar.number}>
-                    <div className={styles.pillarCard}>
-                      <span className={styles.pillarNumber}>{pillar.number}</span>
-                      <h4>{pillar.title}</h4>
-                      <p>{pillar.description}</p>
-                    </div>
-                  </div>
+            {/* About 3 Detailed Paragraphs */}
+            {about?.paragraphs?.length > 0 && (
+              <div className={styles.aboutTextContainer}>
+                {about.paragraphs.map((para, pIdx) => (
+                  <p key={pIdx}>{para}</p>
                 ))}
               </div>
+            )}
+
+            {/* Vision & Mission Cards */}
+            <div className={`row cs_gap_y_30 ${styles.visionMissionGrid}`}>
+              {/* Vision Card */}
+              {about?.vision && (
+                <div className="col-lg-6">
+                  <div className={styles.visionCard}>
+                    <h3 className={styles.visionCardTitle}>
+                      {about.vision.title}
+                    </h3>
+                    <p className={styles.visionCardText}>
+                      {about.vision.description}
+                    </p>
+                  </div>
+                </div>
+              )}
+
+              {/* Mission Card */}
+              {about?.mission && (
+                <div className="col-lg-6">
+                  <div className={styles.missionCard}>
+                    <h3 className={styles.missionCardTitle}>
+                      {about.mission.title}
+                    </h3>
+                    <p className={styles.missionCardText}>
+                      {about.mission.description}
+                    </p>
+                    {about.mission.points?.length > 0 && (
+                      <ul className={styles.missionList}>
+                        {about.mission.points.map((point) => (
+                          <li key={point}>
+                            <span className={styles.missionCheck}>✓</span>
+                            <span>{point}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </Section>
@@ -524,7 +566,7 @@ export default function SurgicalCenterSubdomainPage() {
         <SurgicalContactSection />
       </section>
 
-      {/* 10. Frequently Asked Questions */}
+      {/* 11. Frequently Asked Questions */}
       {faqs?.length > 0 && (
         <Section
           topSpaceLg="40"
