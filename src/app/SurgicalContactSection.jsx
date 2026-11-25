@@ -205,8 +205,8 @@ export default function SurgicalContactSection() {
                   </div>
                   <div>
                     <span className={styles.contactLabel}>Consultation & Helpline</span>
-                    <a href="tel:+91-9810350512" className={styles.contactValue}>
-                      +91-9810350512
+                    <a href="tel:+91-9711585411" className={styles.contactValue}>
+                      +91-9711585411
                     </a>
                   </div>
                 </div>
@@ -218,7 +218,7 @@ export default function SurgicalContactSection() {
                   <div>
                     <span className={styles.contactLabel}>Official Email</span>
                     <a href="mailto:info@seedsofinnocens.com" className={styles.contactValue}>
-                      info@seedsofinnocens.com
+                      surgicalcentre@seedsofinnocence.com
                     </a>
                   </div>
                 </div>

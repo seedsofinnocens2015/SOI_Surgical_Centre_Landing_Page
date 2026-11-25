@@ -401,32 +401,36 @@ export default function SurgicalCenterSubdomainPage() {
               )}
             </div>
 
-            <div className={`row cs_gap_y_30 ${styles.leadershipGrid}`}>
+            <div className={`row cs_gap_y_35 ${styles.leadershipList}`}>
               {leadersList.map((leader) => (
-                <div className="col-lg-6" key={leader.name}>
-                  <div className={styles.leaderCard}>
-                    <div className={styles.leaderTop}>
-                      <div className={styles.leaderThumbnail}>
-                        <Image
-                          src={getAssetPath(leader.image)}
-                          alt={leader.imageAlt || leader.name}
-                          width={140}
-                          height={140}
-                          loading="lazy"
-                        />
-                      </div>
-                      <div className={styles.leaderInfo}>
-                        <h3>
-                          {leader.profileUrl ? (
-                            <Link href={leader.profileUrl} target="_blank" rel="noopener noreferrer">
-                              {leader.name}
-                            </Link>
-                          ) : (
-                            leader.name
-                          )}
-                        </h3>
-                        <div className={styles.leaderRole}>{leader.role || leader.subtitle}</div>
-                        {leader.degrees && <div className={styles.leaderDegrees}>{leader.degrees}</div>}
+                <div className="col-12" key={leader.name}>
+                  <div className={styles.leaderRowCard}>
+                    <div className={styles.leaderPortraitWrapper}>
+                      <Image
+                        src={getAssetPath(leader.image)}
+                        alt={leader.imageAlt || leader.name}
+                        width={280}
+                        height={350}
+                        className={styles.leaderPortraitImg}
+                        loading="lazy"
+                      />
+                    </div>
+                    <div className={styles.leaderContent}>
+                      <div className={styles.leaderHeader}>
+                        <div className={styles.leaderTitleArea}>
+                          <h3>
+                            {leader.profileUrl ? (
+                              <Link href={leader.profileUrl} target="_blank" rel="noopener noreferrer">
+                                {leader.name}
+                              </Link>
+                            ) : (
+                              leader.name
+                            )}
+                          </h3>
+                          <div className={styles.leaderRole}>{leader.role || leader.subtitle}</div>
+                          {leader.degrees && <div className={styles.leaderDegrees}>{leader.degrees}</div>}
+                        </div>
+
                         <div className={styles.leaderMeta}>
                           {leader.experience && (
                             <span>
@@ -442,8 +446,9 @@ export default function SurgicalCenterSubdomainPage() {
                           )}
                         </div>
                       </div>
+
+                      {leader.bio && <p className={styles.leaderBio}>{leader.bio}</p>}
                     </div>
-                    {leader.bio && <p className={styles.leaderBio}>{leader.bio}</p>}
                   </div>
                 </div>
               ))}

@@ -3,7 +3,7 @@ import Image from "next/image";
 import { getAssetPathClient } from "../../utils/assetPath";
 
 const StarIcon = () => (
-  <svg viewBox="0 -0.5 33 33" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" fill="#df3655" width="20" height="20">
+  <svg viewBox="0 -0.5 33 33" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" fill="#f59e0b" width="20" height="20">
     <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
     <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
     <g id="SVGRepo_iconCarrier">
@@ -11,11 +11,11 @@ const StarIcon = () => (
       <desc>Created with Sketch.</desc>
       <defs></defs>
       <g id="Vivid.JS" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
-        <g id="Vivid-Icons" transform="translate(-903.000000, -411.000000)" fill="#df3655">
+        <g id="Vivid-Icons" transform="translate(-903.000000, -411.000000)" fill="#f59e0b">
           <g id="Icons" transform="translate(37.000000, 169.000000)">
             <g id="star" transform="translate(858.000000, 234.000000)">
               <g transform="translate(7.000000, 8.000000)" id="Shape">
-                <polygon points="27.865 31.83 17.615 26.209 7.462 32.009 9.553 20.362 0.99 12.335 12.532 10.758 17.394 0 22.436 10.672 34 12.047 25.574 20.22"></polygon>
+                <polygon points="27.865 31.83 17.615 26.209 7.462 32.009 9.553 20.362 0.99 12.335 12.532 10.758 17.394 0 22.436 10.672 34 12.047 25.574 20.22" fill="#f59e0b"></polygon>
               </g>
             </g>
           </g>
@@ -24,8 +24,6 @@ const StarIcon = () => (
     </g>
   </svg>
 );
-
-const CARD_BG_COLORS = ['#df3655', '#4cacae', '#fcca1d', '#45536e'];
 
 const TestimonialSection = ({ data }) => {
   // Duplicate testimonials for seamless loop
@@ -81,12 +79,16 @@ const TestimonialSection = ({ data }) => {
             {duplicatedTestimonials.map((testimonial, index) => (
               <div key={index} className="cs_testimonial_marquee_item">
                 <div
-                  className="cs_testimonial_card cs_testimonial_card_tinted"
-                  style={{ backgroundColor: CARD_BG_COLORS[index % CARD_BG_COLORS.length] }}
+                  className="cs_testimonial_card cs_testimonial_card_light_red"
+                  style={{
+                    backgroundColor: '#fff1f3',
+                    border: '1px solid #fed7de',
+                    boxShadow: '0 4px 14px rgba(223, 54, 85, 0.06)',
+                  }}
                 >
                   {/* Profile Picture */}
                   <div className="cs_testimonial_avatar_wrapper">
-                    <div className="cs_testimonial_avatar">
+                    <div className="cs_testimonial_avatar" style={{ border: '2px solid #df3655', borderRadius: '50%', background: '#ffffff' }}>
                       <Image
                         src={getAssetPathClient(testimonial.avatar)}
                         alt={testimonial.name}
@@ -106,12 +108,12 @@ const TestimonialSection = ({ data }) => {
                   </div>
                   
                   {/* Name */}
-                  <h3 className="cs_testimonial_name">
+                  <h3 className="cs_testimonial_name" style={{ color: '#111111', fontWeight: '700' }}>
                     {testimonial.name}
                   </h3>
                   
                   {/* Testimonial Text */}
-                  <p className="cs_testimonial_text">
+                  <p className="cs_testimonial_text" style={{ color: '#111111' }}>
                     {testimonial.subtitle}
                   </p>
                 </div>
