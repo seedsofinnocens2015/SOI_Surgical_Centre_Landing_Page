@@ -1,10 +1,19 @@
 import LegalPage from '@/app/Components/LegalPage';
+import SeoRawHead from '@/app/Components/SeoRawHead';
+import { getSeoMetadata } from '@/app/utils/seoMetadata';
 
-export const metadata = {
-  title: 'Privacy Policy | Seeds of Innocens IVF',
-  description:
-    'Read the Privacy Policy for Seeds of Innocens IVF.',
-};
+export async function generateMetadata() {
+  const seoMetadata = await getSeoMetadata({
+    pageUrl: '/surgical-centre/privacy-policy',
+    hierarchyCandidates: [['Seeds of Innocence Surgical Centre', 'Privacy Policy'], []],
+  });
+
+  return {
+    ...seoMetadata,
+    title: seoMetadata.title || 'Privacy Policy | Seeds of Innocens Surgical Centre',
+    description: seoMetadata.description || 'Read the Privacy Policy for Seeds of Innocence Surgical Centre.',
+  };
+}
 
 const rawContent = `Privacy Policy
 
@@ -138,10 +147,13 @@ By phone number: +91 98103 50512
 
 export default function PrivacyPolicyPage() {
   return (
-    <LegalPage
-      title="Privacy Policy"
-      rawContent={rawContent}
-      backgroundImage="/assets/img/PrivacyPolicy.webp"
-    />
+    <>
+      <SeoRawHead pageUrl="/surgical-centre/privacy-policy" />
+      <LegalPage
+        title="Privacy Policy"
+        rawContent={rawContent}
+        backgroundImage="/assets/img/PrivacyPolicy.webp"
+      />
+    </>
   );
 }

@@ -1,10 +1,19 @@
 import LegalPage from '@/app/Components/LegalPage';
+import SeoRawHead from '@/app/Components/SeoRawHead';
+import { getSeoMetadata } from '@/app/utils/seoMetadata';
 
-export const metadata = {
-  title: 'Terms & Conditions | Seeds of Innocens IVF',
-  description:
-    'Read the Terms and Conditions for Seeds of Innocens IVF.',
-};
+export async function generateMetadata() {
+  const seoMetadata = await getSeoMetadata({
+    pageUrl: '/surgical-centre/terms-and-conditions',
+    hierarchyCandidates: [['Seeds of Innocence Surgical Centre', 'Terms & Conditions'], []],
+  });
+
+  return {
+    ...seoMetadata,
+    title: seoMetadata.title || 'Terms & Conditions | Seeds of Innocens Surgical Centre',
+    description: seoMetadata.description || 'Read the Terms and Conditions for Seeds of Innocence Surgical Centre.',
+  };
+}
 
 const rawContent = `Seeds Of Innocence IVF is a trademark of  SEEDS OF INNOCENCE INFERTILITY & MATERNITY CLINIC PRIVATE LIMITED, which is incorporated under the Companies Act, 2013 (18 of 2013). The Corporate Identity Number of the company is U85191UP2013PTC058685
 Disclaimer
@@ -34,10 +43,13 @@ The Video Content has been made available for informational and awareness purpos
 
 export default function TermsAndConditionsPage() {
   return (
-    <LegalPage
-      title="Terms & Conditions"
-      rawContent={rawContent}
-      backgroundImage="/assets/img/TermsandConditions.webp"
-    />
+    <>
+      <SeoRawHead pageUrl="/surgical-centre/terms-and-conditions" />
+      <LegalPage
+        title="Terms & Conditions"
+        rawContent={rawContent}
+        backgroundImage="/assets/img/TermsandConditions.webp"
+      />
+    </>
   );
 }

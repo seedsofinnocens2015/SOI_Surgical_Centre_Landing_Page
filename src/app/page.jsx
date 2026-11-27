@@ -6,8 +6,15 @@ import FAQAccordion from '@/app/Components/FAQAccordion';
 import PageHeading from '@/app/Components/PageHeading';
 import Section from '@/app/Components/Section';
 import TestimonialSection from '@/app/Components/TestimonialSection';
+import SeoRawHead from '@/app/Components/SeoRawHead';
 import { getAssetPath } from '@/app/utils/assetPath';
-import { fetchResolvedSeo } from '@/app/utils/seoMetadata';
+import {
+  fetchResolvedSeo,
+  toKeywords,
+  toRobots,
+  sanitizeOpenGraphType,
+  withoutEmptyValues,
+} from '@/app/utils/seoMetadata';
 import surgicalCenterData from '@/app/data/surgicalCenterData.json';
 import styles from './surgicalCenter.module.scss';
 import SurgicalConsultationModal from './SurgicalConsultationModal';
@@ -23,11 +30,41 @@ export async function generateMetadata() {
     'Seeds of Innocence (SOI) Surgical Centre offers state-of-the-art laparoscopic and hysteroscopic procedures for fibroids, polyps, endometriosis, and fertility preservation in Delhi NCR.';
   const canonicalUrl = 'https://soisurgicalcentre.seedsofinnocens.com/';
 
-  // Attempt to fetch SEO overrides if available in CMS
+  // Attempt to fetch SEO overrides if available in CMS / SEO Panel
   const seo = await fetchResolvedSeo('/seeds-of-innocens-surgical-center').catch(() => null);
 
   const title = seo?.pageTitle || fallbackTitle;
   const description = seo?.metaDescription || fallbackDesc;
+  const keywords = seo?.metaKeyword ? toKeywords(seo.metaKeyword) : undefined;
+  const robots = seo?.robot ? toRobots(seo.robot) : {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  };
+
+  const ogImage = seo?.ogImage || seo?.itemImage || seo?.twitterImageSrc || '';
+  const openGraphImages = ogImage
+    ? [{ url: ogImage }]
+    : [
+        {
+          url: '/assets/img/Services/OpenSurgery.webp',
+          width: 1200,
+          height: 630,
+          alt: 'Seeds of Innocence Surgical Centre',
+        },
+      ];
+
+  const twitterImages = seo?.twitterImageSrc
+    ? [seo.twitterImageSrc]
+    : ogImage
+    ? [ogImage]
+    : ['/assets/img/Services/OpenSurgery.webp'];
 
   return {
     metadataBase: new URL('https://soisurgicalcentre.seedsofinnocens.com'),
@@ -35,42 +72,39 @@ export async function generateMetadata() {
       absolute: title,
     },
     description,
-    alternates: {
-      canonical: canonicalUrl,
-    },
-    robots: {
-      index: true,
-      follow: true,
-      googleBot: {
-        index: true,
-        follow: true,
-        'max-video-preview': -1,
-        'max-image-preview': 'large',
-        'max-snippet': -1,
-      },
-    },
+    keywords,
+    robots,
+    alternates: withoutEmptyValues({
+      canonical: seo?.canonical || canonicalUrl,
+      languages: seo?.alternate ? { 'x-default': seo.alternate } : undefined,
+    }),
+    authors: seo?.author ? [{ name: seo.author }] : [{ name: 'Seeds of Innocence' }],
     openGraph: {
       title: seo?.ogTitle || title,
       description: seo?.ogDescription || description,
-      url: canonicalUrl,
-      siteName: 'Seeds of Innocence Surgical Centre',
-      locale: 'en_IN',
-      type: 'website',
-      images: [
-        {
-          url: '/assets/img/Services/OpenSurgery.webp',
-          width: 1200,
-          height: 630,
-          alt: 'Seeds of Innocence Surgical Centre',
-        },
-      ],
+      url: seo?.ogUrl || seo?.canonical || canonicalUrl,
+      siteName: seo?.ogSiteName || 'Seeds of Innocence Surgical Centre',
+      locale: seo?.ogLocale || 'en_IN',
+      type: sanitizeOpenGraphType(seo?.ogType) || 'website',
+      images: openGraphImages,
     },
     twitter: {
-      card: 'summary_large_image',
-      title: seo?.twitterTitle || title,
-      description: seo?.twitterDescription || description,
-      images: ['/assets/img/Services/OpenSurgery.webp'],
+      card: seo?.twitterCard || 'summary_large_image',
+      site: seo?.twitterSite || undefined,
+      creator: seo?.twitterCreator || undefined,
+      title: seo?.twitterTitle || seo?.ogTitle || title,
+      description: seo?.twitterDescription || seo?.ogDescription || description,
+      images: twitterImages,
     },
+    other: withoutEmptyValues({
+      news_keywords: seo?.newsKeywords || undefined,
+      abstract: seo?.abstract || undefined,
+      'DC.source': seo?.dcSource || undefined,
+      'DC.title': seo?.dcTitle || undefined,
+      'DC.subject': seo?.dcKeywords || undefined,
+      'DC.description': seo?.dcDescription || undefined,
+      copyright: seo?.copyright || undefined,
+    }),
   };
 }
 
@@ -205,7 +239,9 @@ export default function SurgicalCenterSubdomainPage() {
   const leadersList = leadershipTeam?.leaders || expertTeam?.doctors || [];
 
   return (
-    <main className={styles.page} id="home">
+    <>
+      <SeoRawHead pageUrl="/seeds-of-innocens-surgical-center" />
+      <main className={styles.page} id="home">
       {/* 1. Hero Section (Home) */}
       <Section
         className="cs_page_heading cs_bg_filed cs_center"
@@ -597,5 +633,6 @@ export default function SurgicalCenterSubdomainPage() {
         </Section>
       )}
     </main>
+    </>
   );
 }
